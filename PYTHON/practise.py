@@ -77,4 +77,170 @@
 #     return innerFunction  
 # outerFunction('hey')
 
+# y=10
+# print('outside',y)
+# def inner():
+#     global y
+#     y=y+1
+#     x=5
+#     print(x)
+#     print(y)
+# inner()
+# print(y)
 
+# x=1
+# def outer():
+#     x=2
+#     def inner():
+#         x=3
+#         print('inner x:',x)
+#     inner()
+#     print('outer x:',x)
+    
+# outer()
+# print('global x :',x)
+
+# def b():
+#     print('HHIIIIII') 
+    
+# a=b()
+# a   
+# def str_upper(func):
+#     def uppper():
+#         str1=func()
+#         return str1.upper()
+#     return uppper()
+# @str_upper
+# def print_str():
+#     return 'gooood mooorninggg'
+
+# print(print_str())
+
+# TODO: two decorator in one function
+
+# def upper_string(func):
+#     def inner():
+#         return func().upper()
+#     return inner
+# def split_string(func):
+#     def inner():
+#         return func().split()
+#     return inner
+
+# @split_string
+# @upper_string
+# def string():
+#     return 'good moringgg guiys'
+
+# print(string())
+
+# a=[1,2,3,4,5]
+# b=[]
+# for i in a:
+#     b.append(str(i))
+# print(''.join(b))
+
+# def outer(expr):
+#     def inner(func):
+#         return func()+ expr
+#     return inner       
+     
+# @outer(' sanin')
+# def string():
+#     return 'good moringgg '
+
+# print(string)
+
+# class abc:
+#     pass
+
+# b=abc()
+# print(type(b))
+
+# class Student:
+#     def __init__(self,name,batch,domain):
+#         self.name=name
+#         self.batch=batch
+#         self.domain=domain
+#     def display(self):
+#         print('helloooo',self.name,'welcome')
+        
+# student_1=Student('sanin','21','python')
+# print(student_1.name)
+# student_1.display()
+
+# TODO: single inheritance
+# class Human:
+#     def __init__(self,num_heart):
+#         self.num_heart=num_heart
+#         self.num_eyes=2
+#         self.num_nose=1
+    
+#     def Work(self):
+#         print('i can work')
+        
+#     def Eat(self):
+#         print('i can eat')
+        
+# class female(Human):
+#     def __init__(self,name,heart):
+#         super().__init__(heart)
+#         self.num_eyes=1
+#         self.name=name
+        
+#     def clean(self):
+#         print(' i can clean')
+        
+#     def Work(self):
+#         Human().Work()
+#         super().Work()
+#         print('i can cook food')
+        
+# rani=female('rani',1)
+# # rani.Work()
+# print('name: ',rani.name)
+# print('num of eyes:',rani.num_eyes)
+# print('num of heart:',rani.num_heart)
+
+
+
+# TODO: multiple inheritance
+# class Human:
+#     def __init__(self,num_heart):
+#         self.num_heart=num_heart
+#         self.num_eyes=2
+#         self.num_nose=1
+    
+#     def Work(self):
+#         print('i can work')
+        
+# class male():
+#     def __init__(self,name):
+#         self.name=name
+        
+#     def clean(self):
+#         print(' i can clean')
+# class boy(Human,male):
+#     def __init__(self, age,heart,name):
+#         Human.__init__(self,heart)
+#         male.__init__(self,name)
+#         self.age=age
+#     def display(self):
+#         print(f'hello am {self.name} and i have {self.num_heart} heart and my age is {self.age}')
+        
+        
+# raju=boy(name='raju',age=21,heart=1)
+# raju.display()
+
+# TODO: access specifiers
+
+class Branch:
+    def __init__(self,name,rollno,age) -> None:
+        self.name=name
+        self._rollno=rollno
+        self.__age=age
+    def print(self):
+        print(f'my name is {self.name} and my roll no is {self._rollno} and my age is {self.__age}')
+        
+b1=Branch('sanin',2,21)
+b1.print()
