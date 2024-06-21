@@ -239,8 +239,22 @@ class Branch:
         self.name=name
         self._rollno=rollno
         self.__age=age
-    def print(self):
-        print(f'my name is {self.name} and my roll no is {self._rollno} and my age is {self.__age}')
-        
-b1=Branch('sanin',2,21)
-b1.print()
+    # def __print(self):
+    #     print(f'my name is {self.name} and my roll no is {self._rollno} and my age is {self.__age}')
+    # def show(self):
+    #     self.__print()
+    def get_age(self):
+        return self.__age
+    def set_age(self,age):
+        self.__age=age
+class Student(Branch):
+    def display(self):
+        pass
+
+s1=Branch('sanin',2,21)
+s1.set_age(26)
+print(s1.get_age())
+# b1=Student('sanin',2,21)
+# b1.show()
+# print(b1._Branch__age)
+# print(Branch.name)
